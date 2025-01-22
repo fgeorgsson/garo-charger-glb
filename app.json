@@ -459,6 +459,15 @@
               }
             }
           ]
+        },
+        {
+          "id": "loadBalanceType",
+          "type": "text",
+          "value": "EXTERNAL",
+          "label": {
+            "en": "Meter Load Balance Type",
+            "sv": "Meter Load Balance Type"
+          }
         }
       ],
       "id": "gnm3d-rs485"
