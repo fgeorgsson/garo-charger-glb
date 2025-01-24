@@ -68,6 +68,15 @@
           }
         }
       ]
+    },
+    {
+      "id": "loadBalanceType",
+      "type": "text",
+      "value": "EXTERNAL",
+      "label": {
+        "en": "Meter Load Balance Type",
+        "sv": "Meter Load Balance Type"
+      }
     }
   ]
 }

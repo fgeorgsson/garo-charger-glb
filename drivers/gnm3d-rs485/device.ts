@@ -1,7 +1,7 @@
 import Homey from 'homey';
 import fetch from "http.min";
 import { ExternalMeterStatus } from '../../types/external-meter-status';
-import { meterInfoUrl } from './device-const';
+import {meterInfoUrl} from './device-const';
 
 class SmartMeterDevice extends Homey.Device {
   currentStatus?: ExternalMeterStatus;
@@ -71,7 +71,7 @@ class SmartMeterDevice extends Homey.Device {
   async poll() {
     try {
       const result: ExternalMeterStatus = await fetch.json(
-        `http://${this.address}:8080/${meterInfoUrl}${new Date().getTime()}`
+        `http://${this.address}:8080/${this.getMeterInfoUrl()}${new Date().getTime()}`
       );
 
       const accEnergy = this.getCapabilityValue("meter_power");
@@ -125,6 +125,10 @@ class SmartMeterDevice extends Homey.Device {
     } catch (e: any) {
       this.error(e);
     }
+  }
+
+  private getMeterInfoUrl() {
+    return `${meterInfoUrl}${this.getSetting("loadBalanceType")}?_=`;
   }
 }
 
