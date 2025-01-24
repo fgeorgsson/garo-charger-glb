@@ -1,7 +1,7 @@
 import Homey from 'homey';
 import fetch from "http.min";
 import { ExternalMeterStatus } from '../../types/external-meter-status';
-import {baseUrl, meterInfoUrl} from './device-const';
+import {meterInfoUrl} from './device-const';
 
 class SmartMeterDevice extends Homey.Device {
   currentStatus?: ExternalMeterStatus;
